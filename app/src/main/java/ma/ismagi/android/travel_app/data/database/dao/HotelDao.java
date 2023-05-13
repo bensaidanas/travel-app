@@ -1,5 +1,6 @@
 package ma.ismagi.android.travel_app.data.database.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -12,15 +13,18 @@ import ma.ismagi.android.travel_app.data.database.entities.HotelEntity;
 @Dao
 public interface HotelDao {
     @Query("SELECT * FROM hotels")
-    List<HotelEntity> getAllHotels();
+    LiveData<List<HotelEntity>> getAllHotels();
 
     @Query("SELECT * FROM hotels WHERE id = :hotelId")
     HotelEntity getHotelById(int hotelId);
 
     @Insert
-    void insertCountry(HotelEntity country);
+    void insertHotel(HotelEntity hotel);
 
     @Delete
-    void deleteCountry(HotelEntity country);
+    void deleteHotel(HotelEntity hotel);
+
+    @Query("SELECT * FROM hotels WHERE countryId = :countryId")
+    LiveData<List<HotelEntity>> getHotelsByCountry(int countryId);
 }
 

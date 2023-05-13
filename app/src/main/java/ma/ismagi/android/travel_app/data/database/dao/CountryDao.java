@@ -1,5 +1,6 @@
 package ma.ismagi.android.travel_app.data.database.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -12,7 +13,7 @@ import ma.ismagi.android.travel_app.data.database.entities.CountryEntity;
 @Dao
 public interface CountryDao {
     @Query("SELECT * FROM countries")
-    List<CountryEntity> getAllCountries();
+    LiveData<List<CountryEntity>> getAllCountries();
 
     @Query("SELECT * FROM countries WHERE id = :countryId")
     CountryEntity getCountryById(int countryId);

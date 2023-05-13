@@ -5,7 +5,7 @@ import android.app.Application;
 import androidx.room.Room;
 
 public class TravelApp extends Application {
-    private AppDatabase database;
+    private static AppDatabase database;
 
     @Override
     public void onCreate() {
@@ -15,7 +15,7 @@ public class TravelApp extends Application {
                 .build();
     }
 
-    public AppDatabase getDatabase() {
+    public static AppDatabase getDatabase() {
         return database;
     }
 }
