@@ -26,6 +26,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -36,4 +40,23 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+//    Volley (Networking Library)
+    implementation 'com.android.volley:volley:1.2.1'
+
+//    Room (Database Library):
+    def room_version = "2.5.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+//    Picasso (Image Loading Library):
+    implementation 'com.squareup.picasso:picasso:2.8'
+
+//    ViewModel and LiveData (Architecture Components):
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+
+//    Material Design Components
+    implementation 'com.google.android.material:material:1.5.0'
+
+
 }
