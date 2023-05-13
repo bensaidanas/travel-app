@@ -1,6 +1,8 @@
 package ma.ismagi.android.travel_app.data.database.dao;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
@@ -14,5 +16,11 @@ public interface PlaceToVisitDao {
 
     @Query("SELECT * FROM placesToVisit WHERE id = :placeId")
     PlaceToVisitEntity getPlaceToVisitById(int placeId);
+
+    @Insert
+    void insertCountry(PlaceToVisitEntity country);
+
+    @Delete
+    void deleteCountry(PlaceToVisitEntity country);
 }
 

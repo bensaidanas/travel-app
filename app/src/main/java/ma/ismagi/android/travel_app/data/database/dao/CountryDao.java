@@ -1,6 +1,8 @@
 package ma.ismagi.android.travel_app.data.database.dao;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
@@ -20,5 +22,11 @@ public interface CountryDao {
 
     @Query("UPDATE countries SET favorite = 0 WHERE id = :countryId")
     void removeCountryFromFavorites(int countryId);
+
+    @Insert
+    void insertCountry(CountryEntity country);
+
+    @Delete
+    void deleteCountry(CountryEntity country);
 }
 
