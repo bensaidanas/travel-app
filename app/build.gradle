@@ -52,8 +52,8 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.8'
 
 //    ViewModel and LiveData (Architecture Components):
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
 
 //    Material Design Components
     implementation 'com.google.android.material:material:1.5.0'
